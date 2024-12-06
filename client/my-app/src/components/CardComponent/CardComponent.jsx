@@ -20,7 +20,7 @@ const CardComponent = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         }}
-        bodyStyle={{ padding: "10px" }}
+        styles={{body:{padding: "10px" } }}
         cover={
           <img
             alt="example"

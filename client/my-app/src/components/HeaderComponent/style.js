@@ -4,8 +4,9 @@ import styled from 'styled-components'
 export const WrapperHeader = styled(Row)`
     padding: 10px 120px;
     // background-color: rgb(26, 148, 255);
-background: linear-gradient(90deg, #000 70%, #8b0000 100%); /* Chuyển từ đen sang đỏ đậm */
+    background: linear-gradient(90deg, #000 70%, #8b0000 100%); /* Chuyển từ đen sang đỏ đậm */
     align-items: center;
+    justify-content: center;
 `
 
 
