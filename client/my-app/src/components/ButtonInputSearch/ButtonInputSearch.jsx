@@ -1,12 +1,19 @@
 import React from "react";
-import { AudioOutlined, PictureOutlined, SearchOutlined } from "@ant-design/icons";
+import {
+  AudioOutlined,
+  PictureOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
 import { Input } from "antd";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import InputComponent from "../InputComponent/InputComponent";
 
-
 const ButtonInputSearch = () => {
   // Tạo thành phần suffix (biểu tượng bên phải ô input)
+  const handleSearch = () => {
+    const inputElement = document.getElementById("custom-search-input");
+    console.log("Search value:", inputElement?.value);
+  };
   const suffix = (
     <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
       <AudioOutlined
@@ -25,12 +32,23 @@ const ButtonInputSearch = () => {
         }}
         onClick={() => alert("Search picture....")}
       />
+      <ButtonComponent
+        icon={<SearchOutlined style={{ fontSize: 18, color: "#fff" }} />}
+        type="primary"
+        size="large"
+        onClick={handleSearch}
+        // style={{ height: "40px" }} // Đồng bộ chiều cao với input
+        style={{
+          height: "28px", // Đồng bộ chiều cao với input
+          background: "#8b0000", // Màu nền đỏ đậm
+          borderColor: "#8b0000", // Viền cũng là màu đỏ đậm
+          borderRadius: '30px'
+        }}
+      >
+        Search
+      </ButtonComponent>
     </div>
   );
-  const handleSearch = () => {
-    const inputElement = document.getElementById("custom-search-input");
-    console.log("Search value:", inputElement?.value);
-  };
 
   return (
     <div style={{ display: "flex", alignItems: "center", padding: "20px" }}>
@@ -43,18 +61,6 @@ const ButtonInputSearch = () => {
       />
 
       {/* Search Button */}
-      <ButtonComponent
-        icon={<SearchOutlined style={{ fontSize: 18, color: "#fff" }} />}
-        type="primary"
-        size="large"
-        onClick={handleSearch}
-        // style={{ height: "40px" }} // Đồng bộ chiều cao với input
-        style={{
-          height: "40px", // Đồng bộ chiều cao với input
-          background: "#8b0000", // Màu nền đỏ đậm
-          borderColor: "#8b0000", // Viền cũng là màu đỏ đậm
-        }}
-      >Search</ButtonComponent>
     </div>
   );
 };

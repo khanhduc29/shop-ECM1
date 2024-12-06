@@ -23,12 +23,12 @@ const HeaderComponent = () => {
         <Col span={6}>
           <WrapperTextHeader>TechZone</WrapperTextHeader>
         </Col>
-        <Col span={12}>
+        <Col span={12} style={{overflow: "hidden"}}>
           <WrapperTextHeader>
             <ButtonInputSearch></ButtonInputSearch>
           </WrapperTextHeader>
         </Col>
-        <Col span={6} style={{ display: "flex", gap: "20px" }}>
+        <Col span={6} style={{ display: "flex", gap: "20px" , justifyContent: "flex-end"}}>
           <WrapperHeaderAccout>
             <UserOutlined style={{ fontSize: "34px" }} />
             <div>
