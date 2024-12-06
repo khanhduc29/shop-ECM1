@@ -1,35 +1,23 @@
-// rafc
-
 import React from "react";
 import { Input } from "antd";
-import { AudioOutlined, PictureOutlined, SearchOutlined } from "@ant-design/icons";
 
-const { Search } = Input;
 
-const InputComponent = () => {
-  const suffix = (
-    <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-      <AudioOutlined
-        style={{
-          fontSize: 18,
-          color: "#1677ff",
-        }}
-      />
-      <PictureOutlined
-        style={{
-          fontSize: 18,
-          color: "#1677ff",
-        }}
-      />
-    </div>
-  );
 
+// Component input tái sử dụng
+const InputComponent = ({
+  placeholder = "Type here...",
+  suffix,
+  size = "large",
+  // onSearch,
+  ...rest
+}) => {
   return (
-    <Search
-      placeholder="input search text"
-      enterButton={<SearchOutlined style={{ fontSize: 18, color: "#fff" }} />}
-      size="large"
+    <Input
+      placeholder={placeholder}
+      size={size}
       suffix={suffix}
+      // onSearch={onSearch}
+      {...rest}
     />
   );
 };

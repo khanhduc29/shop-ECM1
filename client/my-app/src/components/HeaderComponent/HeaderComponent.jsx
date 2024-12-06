@@ -5,60 +5,32 @@ import {
   WrapperTextHeader,
   WrapperHeaderAccout,
   WrapperTextHeaderSmall,
+  WrapperHeaderCart,
 } from "./style";
-import { AudioOutlined } from "@ant-design/icons";
-import { Input } from "antd";
+
 import {
   UserOutlined,
   CaretDownOutlined,
   ShoppingCartOutlined,
-  PictureOutlined,
-  SearchOutlined 
 } from "@ant-design/icons";
-import {InputComponent} from "../InputComponent/InputComponent"
 
-const { Search } = Input;
-
-const suffix = (
-  <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-    <AudioOutlined
-      style={{
-        fontSize: 18,
-        color: "#1677ff",
-      }}
-    />
-    <PictureOutlined
-      style={{
-        fontSize: 18,
-        color: "#1677ff",
-      }}
-    />
-  </div>
-);
+import ButtonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
 
 const HeaderComponent = () => {
   return (
     <div>
       <WrapperHeader gutter={16}>
         <Col span={6}>
-          <WrapperTextHeader>Shop-hehe</WrapperTextHeader>
+          <WrapperTextHeader>TechZone</WrapperTextHeader>
         </Col>
         <Col span={12}>
-        
           <WrapperTextHeader>
-            
-            <Search
-              placeholder="input search text"
-              enterButton={<SearchOutlined style={{ fontSize: 18, color: "#fff" }} />}
-              size="large"
-              suffix={suffix}
-            />
-            
+            <ButtonInputSearch></ButtonInputSearch>
           </WrapperTextHeader>
         </Col>
-        <Col span={6} style={{ display: "flex" , gap: "20px"}} >
+        <Col span={6} style={{ display: "flex", gap: "20px" }}>
           <WrapperHeaderAccout>
-            <UserOutlined style={{ fontSize: "30px" }} />
+            <UserOutlined style={{ fontSize: "34px" }} />
             <div>
               <WrapperTextHeaderSmall>Đăng nhập/Đăng ký</WrapperTextHeaderSmall>
               <div>
@@ -68,10 +40,12 @@ const HeaderComponent = () => {
             </div>
           </WrapperHeaderAccout>
 
-          <div>
-            <ShoppingCartOutlined style={{ fontSize: "30px", color: "#fff" }} />
-            <WrapperTextHeaderSmall>Giỏ hàng</WrapperTextHeaderSmall>
-          </div>
+          <WrapperHeaderCart>
+            <ShoppingCartOutlined style={{ fontSize: "34px", color: "#fff" }} />
+            <div>
+              <WrapperTextHeaderSmall>Giỏ hàng</WrapperTextHeaderSmall>
+            </div>
+          </WrapperHeaderCart>
         </Col>
       </WrapperHeader>
     </div>
